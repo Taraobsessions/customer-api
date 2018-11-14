@@ -27,10 +27,15 @@ const Customer = sequelize.define('customers', {
   city: {
     type: Sequelize.STRING,
     allowNull: false,
-  }
+  },
+  companyId: {
+    type: Sequelize.INTEGER,
+    field: 'company_id'
+  },
 }, {
   timestamps: false,
   tableName: 'customers'
 })
 
+Customer.belongsTo(Company)
 module.exports = Customer
