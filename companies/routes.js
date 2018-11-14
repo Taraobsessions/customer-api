@@ -18,7 +18,7 @@ router.get('/companies/:id', (req, res, next) => {
     .then(companies => {
       if (!companies) {
         return res.status(404).send({
-          message: `Companies does not exist`
+          message: `Company does not exist`
         })
       }
       return res.send(companies)
